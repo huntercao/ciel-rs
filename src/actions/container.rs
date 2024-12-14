@@ -117,7 +117,7 @@ pub fn farewell(path: &Path) -> Result<()> {
 
 /// Download the OS tarball and then extract it for use as the base layer
 pub fn load_os(url: &str, sha256: Option<String>, tarball: bool) -> Result<()> {
-    info!("Downloading base OS rootfs...");
+    info!("Downloading base OS rootfs...{}", url);
     let path = Path::new(url);
     let filename = path
         .file_name()

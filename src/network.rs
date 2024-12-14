@@ -13,6 +13,10 @@ use std::{
     thread::{self, sleep},
     time::Duration,
 };
+use console::{style,};
+use crate::{
+    info,
+};
 
 const MANIFEST_URL: &str = "https://releases.aosc.io/manifest/recipe.json";
 
@@ -165,7 +169,7 @@ pub fn download_git(uri: &str, root: &Path) -> Result<()> {
         }
         progress.finish_and_clear();
     });
-
+    info!("Git download: {}", uri);
     git2::build::RepoBuilder::new()
         .fetch_options(options)
         .with_checkout(co_callback)

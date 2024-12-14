@@ -5,6 +5,7 @@ mod config;
 mod dbus_machine1;
 mod dbus_machine1_machine;
 mod diagnose;
+#[macro_use]
 mod logging;
 mod machine;
 mod network;
