@@ -102,6 +102,7 @@ pub fn pick_latest_rootfs(arch: &str) -> Result<RootFs> {
     }
     rootfs.sort_unstable_by_key(|x| x.date.clone());
 
+    println!("{:#?}", rootfs.last());
     Ok(rootfs.last().unwrap().to_owned())
 }
 
